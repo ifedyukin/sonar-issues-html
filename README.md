@@ -4,7 +4,7 @@ Just generate html report based on json with issues.
 
 ## Usage
 ```
-npm i -g https://github.com/ifedyukin/sonar-issues-html
+npm i -g sonar-issues-html
 cd ~/sonar-report-dir
 sonar-issues-html
 ```
