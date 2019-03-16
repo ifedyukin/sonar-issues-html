@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title= config.title
+    style
+      include style.css
+  body
+    #content
+      h1= config.title
+      #issues-container
+        each issue in sonar.issues
+          .issue
+            a.issue__rule(href=config.rule_prefix + issue.rule)= issue.rule
+            .issue__project= issue.project
+            div.issue__severity(class='issue__severity--' + issue.severity.toLowerCase())= issue.severity.toUpperCase()
+            .issue__message= issue.message
+            .issue__component= issue.component.replace(issue.project + ':', '')
+              .issue__expand
+                .issue__text-range
+                  b Start line: 
+                  span= issue.textRange.startLine
+                .issue__text-range
+                  b End line: 
+                  span= issue.textRange.endLine
+                .issue__text-range
+                  b Start offset: 
+                  span= issue.textRange.startOffset
+                .issue__text-range
+                  b End offset: 
+                  span= issue.textRange.endOffset
+      a.report-bug(href= config.bugreport) Report bug
+    script(type='text/javascript')
+      include script.js

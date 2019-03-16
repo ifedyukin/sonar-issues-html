@@ -1,0 +1,7 @@
+{
+  "input": "sonar-issues.json",
+  "output": "sonar-issues.html",
+  "title": "Sonar issues report",
+  "rule_prefix": "https://sbforge.org/sonar/rules/show/",
+  "bugreport": "https://github.com/ifedyukin/sonar-issues-html/issues"
+}

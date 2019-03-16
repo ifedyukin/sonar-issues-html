@@ -1,0 +1,27 @@
+{
+  "name": "sonar-issues-html",
+  "version": "1.0.0",
+  "description": "Transform sonar issues json to html",
+  "main": "main.js",
+  "bin": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifedyukin/sonar-issues-html.git"
+  },
+  "keywords": [
+    "sonar",
+    "html"
+  ],
+  "author": "Igor Fedyukin <igor_fedyukin@epam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ifedyukin/sonar-issues-html/issues"
+  },
+  "homepage": "https://github.com/ifedyukin/sonar-issues-html#readme",
+  "dependencies": {
+    "pug": "2.0.3"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules
+sonar-issues.json
+sonar-issues.html
+package-lock.json
