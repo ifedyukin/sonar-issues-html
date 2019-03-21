@@ -14,7 +14,7 @@ html(lang="en")
             .issue__project= issue.project
             div.issue__severity(class='issue__severity--' + issue.severity.toLowerCase())= issue.severity.toUpperCase()
             .issue__message= issue.message
-            .issue__component= issue.component.replace(issue.project + ':', '')
+            .issue__component= issue.component.replace(issue.project + ':', '') + ':' + issue.textRange.startLine
               .issue__expand
                 .issue__text-range
                   b Start line: 

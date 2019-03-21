@@ -1,6 +1,6 @@
 {
   "name": "sonar-issues-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transform sonar issues json to html",
   "main": "main.js",
   "bin": "main.js",

@@ -6,6 +6,8 @@ const path = require('path');
 const defaultConfig = require('./config.json');
 
 const CWD = process.cwd();
+const [output] = process.argv.slice(2);
+
 let config = defaultConfig;
 
 const configPath = path.resolve(CWD, 'config.json');
@@ -16,6 +18,10 @@ if (fs.existsSync(configPath)) {
   } catch (error) {
     console.error('Incorrect config file, using default config...');
   }
+}
+
+if (output) {
+  config.output = output;
 }
 
 function generateHtml(sonarData) {
