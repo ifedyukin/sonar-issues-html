@@ -92,7 +92,8 @@ h1 {
 
 .issue__component::before {
   content: "\2193";
-  margin-right: 7px;
+  display: inline-block;
+  margin: 0 7px;
 }
 
 .issue__expand {
@@ -104,8 +105,7 @@ h1 {
 }
 
 .issue__component--open::before {
-  content: "\2191";
-  margin-right: 7px;
+  transform: rotate(180deg);
 }
 
 .report-bug {
