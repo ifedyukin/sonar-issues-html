@@ -96,6 +96,12 @@ h1 {
   margin: 0 7px;
 }
 
+.issue__component--empty::before {
+  content: "";
+  display: inline-block;
+  margin: 0 7px;
+}
+
 .issue__expand {
   display: none;
 }

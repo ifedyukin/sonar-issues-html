@@ -14,20 +14,24 @@ html(lang="en")
             .issue__project= issue.project
             div.issue__severity(class='issue__severity--' + issue.severity.toLowerCase())= issue.severity.toUpperCase()
             .issue__message= issue.message
-            .issue__component= issue.component.replace(issue.project + ':', '') + ':' + issue.textRange.startLine
-              .issue__expand
-                .issue__text-range
-                  b Start line: 
-                  span= issue.textRange.startLine
-                .issue__text-range
-                  b End line: 
-                  span= issue.textRange.endLine
-                .issue__text-range
-                  b Start offset: 
-                  span= issue.textRange.startOffset
-                .issue__text-range
-                  b End offset: 
-                  span= issue.textRange.endOffset
+            if issue.textRange
+              .issue__component= issue.component.replace(issue.project + ':', '') + ':' + issue.textRange.startLine
+            else
+              .issue__component.issue__component--empty= issue.component.replace(issue.project + ':', '')
+              if issue.textRange
+                .issue__expand
+                  .issue__text-range
+                    b Start line: 
+                    span= issue.textRange.startLine
+                  .issue__text-range
+                    b End line: 
+                    span= issue.textRange.endLine
+                  .issue__text-range
+                    b Start offset: 
+                    span= issue.textRange.startOffset
+                  .issue__text-range
+                    b End offset: 
+                    span= issue.textRange.endOffset
       a.report-bug(href= config.bugreport) Report bug
     script(type='text/javascript')
       include script.js

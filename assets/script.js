@@ -1,6 +1,6 @@
 document.addEventListener('click', function(event) {
   var target = event.target;
-  if (!target.classList.contains('issue__component')) return;
+  if (!target.classList.contains('issue__component') || target.classList.contains('issue__component--empty')) return;
 
   var range = target.firstElementChild;
   if (target.classList.contains('issue__component--open')) {
