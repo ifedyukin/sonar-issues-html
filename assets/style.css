@@ -66,6 +66,19 @@ h1 {
   font-weight: bold;
 }
 
+.issue__link {
+  text-decoration: none;
+  right: 10px;
+  position: absolute;
+}
+
+.issue__link::before {
+  border-bottom: 1px solid #1976D2;
+  color: #1976D2;
+  margin-right: 4px;
+  content: "Sonar"
+}
+
 .issue__rule {
   border-bottom: 1px solid #1976D2;
   color: #1976D2;

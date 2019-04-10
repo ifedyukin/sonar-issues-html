@@ -12,13 +12,11 @@ html(lang="en")
           .issue
             a.issue__rule(href=config.rule_prefix + issue.rule)= issue.rule
             .issue__project= issue.project
+            a.issue__link(href=url + '/project/issues?id=' + issue.project + '&open=' + issue.key)
             div.issue__severity(class='issue__severity--' + issue.severity.toLowerCase())= issue.severity.toUpperCase()
             .issue__message= issue.message
             if issue.textRange
               .issue__component= issue.component.replace(issue.project + ':', '') + ':' + issue.textRange.startLine
-            else
-              .issue__component.issue__component--empty= issue.component.replace(issue.project + ':', '')
-              if issue.textRange
                 .issue__expand
                   .issue__text-range
                     b Start line: 
@@ -32,6 +30,8 @@ html(lang="en")
                   .issue__text-range
                     b End offset: 
                     span= issue.textRange.endOffset
+            else
+              .issue__component.issue__component--empty= issue.component.replace(issue.project + ':', '')
       a.report-bug(href= config.bugreport) Report bug
     script(type='text/javascript')
       include script.js

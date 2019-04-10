@@ -25,3 +25,6 @@ sonar-issues-html
   "bugreport": "https://github.com/ifedyukin/sonar-issues-html/issues" // util issues link
 }
 ```
+
+## Env
+* URL - Sonar instance url, default - `http://localhost:9000`.

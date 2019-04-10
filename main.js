@@ -29,7 +29,8 @@ function generateHtml(sonarData) {
 
   return render({
     sonar: sonarData,
-    config
+    config,
+    url: process.env.URL || 'http://localhost:9000'
   });
 }
 
