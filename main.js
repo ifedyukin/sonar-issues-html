@@ -37,15 +37,20 @@ function generateHtml(sonarData) {
 const sonarFile = path.resolve(CWD, config.input);
 if (!fs.existsSync(sonarFile)) {
   console.error('Sonar issues file not found!');
-  return;
+  process.exit(1);
 }
 
 console.log('Sonar issues report generating...');
 console.log('Input file: ' + sonarFile);
 
-const issueJson = JSON.parse(fs.readFileSync(sonarFile));
-const generatedHtml = generateHtml(issueJson);
-fs.writeFileSync(path.resolve(CWD, config.output), generatedHtml);
-
-console.log('Sonar issues report generated!')
-console.log('Output file: ' + path.resolve(CWD, config.output));
+try {
+  const issueJson = JSON.parse(fs.readFileSync(sonarFile));
+  const generatedHtml = generateHtml(issueJson);
+  fs.writeFileSync(path.resolve(CWD, config.output), generatedHtml);
+  
+  console.log('Sonar issues report generated!')
+  console.log('Output file: ' + path.resolve(CWD, config.output));
+} catch (error) {
+  console.error('Passed file has incorrect format!');
+  process.exit(1);
+}
